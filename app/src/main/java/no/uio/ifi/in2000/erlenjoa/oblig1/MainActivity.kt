@@ -44,51 +44,14 @@ class MainActivity : ComponentActivity() {
                         startDestination = palindromePath
                     ) {
                         composable(route = palindromePath) {
-                            fun func() = { navController.navigate(unitconverterPath) }
-                            PalindromeScreen(func())
+                            PalindromeScreen({ navController.navigate(unitconverterPath) })
                         }
                         composable(route = unitconverterPath) {
-                            fun func() = { navController.navigate(palindromePath) }
-                            UnitConverterScreen(func())
+                            UnitConverterScreen({ navController.navigate(palindromePath) })
                         }
                     }
-
-
-                    // MIDLERTIDIG !!!:
-                    /*
-                    Column(
-                        modifier = Modifier
-                            .height(300.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        PalindromeChecker()
-                        UnitConverter()
-                    }
-                    */
                 }
             }
-        }
-    }
-}
-
-
-@Composable
-fun MyAppNavHost(
-    navController: NavHostController = rememberNavController(),
-    startDestination: String = "palindromePath"
-) {
-    val palindromePath: String = "palindromePath"
-    val unitconverterPath: String = "unitconverterPath"
-
-    NavHost(
-        navController = navController,
-        startDestination = startDestination
-    ) {
-        composable(palindromePath) {
-            navController.navigate(palindromePath)
-        }
-        composable(unitconverterPath) {
-            navController.navigate(unitconverterPath)
         }
     }
 }

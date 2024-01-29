@@ -119,13 +119,3 @@ fun PalindromeChecker(func: () -> Unit) {
         }
     }
 }
-/*
-@Composable
-fun NavButton(currentRoute: AppRoute) {
-    Button(
-        onClick = {
-            currentRoute = "U"
-        }) {
-
-    }
-}*/
